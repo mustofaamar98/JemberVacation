@@ -1,0 +1,29 @@
+.box-part .tanggul {
+    height: 650px;
+    width: auto;
+    margin-left: 5%;
+    margin-top: 10%;
+    position: relative;
+}
+
+.part-tanggul {
+    position: absolute;
+    top: 93%;
+    width: 400px;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.part-tanggul ul .sumberbaru {
+    margin-left: 5%;
+}
+
+.part-tanggul ul .bangsalsari {
+    margin-left: 15%;
+    margin-top: 100px;
+}
+
+.part-tanggul ul .tanggul {
+    margin-left: 25%;
+    margin-top: 100px;
+}

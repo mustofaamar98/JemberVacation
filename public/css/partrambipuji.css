@@ -1,0 +1,29 @@
+.box-part .rambi {
+    height: 700px;
+    width: auto;
+    margin-left: 25%;
+    position: relative;
+}
+
+.part-rambipuji {
+    position: absolute;
+    top: 56%;
+    width: 400px;
+    left: 75%;
+    transform: translate(-50%, -50%);
+}
+
+.part-rambipuji ul .rambipuji {
+    margin-top: 184px;
+    margin-left: -118px;
+}
+
+.part-rambipuji ul .mangli {
+    margin-top: 267px;
+    margin-left: -85px;
+}
+
+.part-rambipuji ul .jenggawah {
+    margin-top: 365px;
+    margin-left: -188px;
+}

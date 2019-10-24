@@ -1,0 +1,107 @@
+.text-backdrop {
+    top: 50%;
+    width: 400px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 150px;
+    z-index: -4;
+    color: rgb(245, 245, 245);
+}
+
+.judul-lokasi {
+    margin-bottom: 100px;
+}
+
+.box-part img {
+    height: 700px;
+    width: auto;
+}
+
+.img--circle {
+    float: right;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    float: left;
+    margin-right: 30px;
+}
+
+.list-wisata .row {
+    margin-bottom: 70px;
+}
+
+.list-wisata ul li {
+    margin: 30px;
+    height: auto;
+}
+
+.detail {
+    background-color: rgb(255, 255, 255);
+    padding: 8px 25px;
+    border-radius: 30px;
+    color: #7A93F0;
+    border: 1.5px solid #7A93F0;
+    font-weight: bold !important;
+    transition: all 0.5 ease;
+}
+
+.detail:hover {
+    color: white;
+    background-color: #7A93F0;
+}
+
+.box-part {
+    position: relative;
+}
+
+.single-distrik ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.distrik ul li a {
+    background: rgb(255, 255, 255);
+    padding: 8px 20px;
+    border-radius: 30px;
+    border: 1px solid #7A93F0;
+    font-size: 15px;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.distrik ul li img {
+    width: 30px;
+    height: auto;
+}
+
+.part-mayang {
+    top: 50%;
+    width: 400px;
+    position: absolute;
+    left: 64%;
+    transform: translate(-50%, -50%);
+}
+
+.part-mayang ul .batang {
+    margin-left: 100px;
+    margin-top: -100px;
+}
+
+.part-mayang ul .silo {
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.part-mayang ul .mumbulsari {
+    margin-top: 20px;
+}
+
+.part-mayang ul .tumperejo {
+    margin-top: 100px;
+    margin-left: 100px;
+}

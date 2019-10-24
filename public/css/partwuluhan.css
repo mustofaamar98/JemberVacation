@@ -1,0 +1,26 @@
+.box-part .wuluhan {
+    height: 700px;
+    width: auto;
+}
+
+.part-wuluhan {
+    top: 75%;
+    width: 400px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-35%, -40%);
+}
+
+.part-wuluhan ul .balung {
+    margin-left: 30px;
+}
+
+.part-wuluhan ul .wuluhan {
+    margin-top: 130px;
+    margin-left: 0px;
+}
+
+.part-wuluhan ul .ambulu {
+    margin-left: 50px;
+    margin-top: -146%;
+}

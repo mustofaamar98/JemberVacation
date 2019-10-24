@@ -1,0 +1,32 @@
+.box-part .kalisat {
+    margin-top: 20%;
+    height: 400px;
+    width: auto;
+}
+
+.part-kalisat {
+    top: 60%;
+    width: 400px;
+    position: absolute;
+    left: 64%;
+    transform: translate(-50%, -20%);
+}
+
+.part-kalisat ul .sukowono {
+    margin-left: -50px;
+}
+
+.part-kalisat ul .sumberjambe {
+    margin-top: 50px;
+    margin-left: 150px;
+}
+
+.part-kalisat ul .kalisat {
+    margin-top: 20px;
+    margin-left: -30px;
+}
+
+.part-kalisat ul .ledokombo {
+    margin-top: 80px;
+    margin-left: 30px;
+}

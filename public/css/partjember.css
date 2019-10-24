@@ -1,0 +1,24 @@
+.box-part .jember {
+    margin-top: 10%;
+    height: 600px;
+    width: auto;
+    margin-left: 15%;
+}
+
+.part-jember {
+    top: 95%;
+    width: 400px;
+    position: absolute;
+    left: 65%;
+    transform: translate(-50%, -50%);
+}
+
+.part-jember ul .wirolegi {
+    margin-left: 70px;
+    margin-top: 125px;
+}
+
+.part-jember .jember {
+    margin-top: 100px;
+    margin-left: 60px;
+}

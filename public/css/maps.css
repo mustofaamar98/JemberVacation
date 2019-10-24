@@ -1,0 +1,185 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: rgb(255, 255, 255);
+    font-family: 'Nunito', sans-serif;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    line-height: 2;
+}
+
+a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+a:hover {
+    border-bottom: none !important;
+}
+
+.logo img {
+    width: 200px;
+    height: auto;
+}
+
+svg {
+    margin-top: 5%;
+    transition-duration: 350ms;
+}
+
+.part-maps {
+    overflow: hidden;
+    display: inline-block;
+    transition: all 0.5s ease;
+    -webkit-transition: fill .4s ease;
+    -moz-transition: fill .4s ease;
+    -o-transition: fill .4s ease;
+    transition: fill .4s ease;
+}
+
+.part-maps:hover {
+    fill: #595474;
+}
+
+.lokasi {
+    margin-top: -65%;
+    margin-left: 5%;
+    z-index: 99;
+}
+
+.lokasi img {
+    animation-duration: 2s;
+    animation-delay: 0s;
+}
+
+.lokasi h1 {
+    animation-duration: 2s;
+    animation-delay: 1s;
+    color: #203B81;
+    font-weight: 600;
+}
+
+.col-9 {
+    margin: 0;
+    padding: 0;
+}
+
+.col-3 {
+    position: fixed;
+    width: 20%;
+    margin-left: 80% !important;
+    margin: 0;
+    padding: 0;
+}
+
+.box-info {
+    padding: 20px;
+}
+
+.garis {
+    margin-top: 15px;
+    height: 5px;
+    widows: 20px;
+    width: 100%;
+    background-color: #595474;
+    margin-bottom: 50px;
+    border-radius: 40px;
+}
+
+.box-menu {
+    padding: 10px 30px;
+    border-radius: 50px;
+    background-image: linear-gradient(45deg, #7A93F0, #A1C4FD);
+    color: white;
+}
+
+.box-menu img {
+    padding: 5px 0 5px 15px;
+    float: left;
+}
+
+.menu img {
+    margin-bottom: 20px;
+}
+
+ul {
+    margin-top: 10px;
+}
+
+ul li {
+    text-decoration: none;
+    display: block;
+    margin-bottom: 30px;
+}
+
+ul li a {
+    font-size: 18px;
+}
+
+ul .btn-info1 a {
+    background-image: linear-gradient(45deg, #7A93F0, #A1C4FD);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: white !important;
+}
+
+ul .btn-info2 a {
+    background-image: linear-gradient(45deg, #37C2CF, #A1C4FD);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: white !important;
+}
+
+ul .distrik a {
+    background-image: linear-gradient(45deg, #FFAFBD, #FFC3A0);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: white;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+ul li a:hover {
+    color: white;
+}
+
+.distrik {
+    animation-duration: 3s;
+    animation-delay: 2s;
+    display: none;
+}
+
+.btn-info {
+    display: none;
+}
+
+.maps-bg {
+    position: absolute;
+    z-index: -5;
+}
+
+.maps-bg img {
+    width: 80%;
+}

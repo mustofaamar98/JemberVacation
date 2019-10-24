@@ -1,0 +1,60 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+}
+
+p {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+    line-height: 2;
+}
+
+a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 300;
+}
+
+.box-map {
+    padding: 40px;
+}
+
+.box-konten {
+    padding: 60px 70px 60px 0px;
+}
+
+.left {
+    float: left;
+    width: 40%;
+    height: 100vh;
+    position: fixed;
+}
+
+.right {
+    float: right;
+    width: 60%;
+    height: 100vh;
+}
+
+.btn-info {
+    top: 7%;
+    position: absolute;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    border-radius: 30px;
+}
+
+.btn-info a {
+    color: white !important;
+}
