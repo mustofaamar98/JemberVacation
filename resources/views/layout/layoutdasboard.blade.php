@@ -70,6 +70,19 @@
           </div>
         </nav>  
 
+        @if ($errors->any())
+        <div class="alert alert-danger alert-dismissible fade show">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+
       <div class="tab-content" id="nav-tabContent">
           <br>
           <div class="tab-pane active" id="nav-wisata" role="tabpanel" aria-labelledby="nav-wisata-tab">
@@ -78,19 +91,6 @@
                     Tambah Data
                   </button>
                   <br><br>
-
-                  {{-- @if ($errors->any())
-                  <div class="alert alert-danger alert-dismissible fade show">
-                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                          <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-                  @endif --}}
 
                   <div class="table100 ver2 m-b-110">
                     <table id="tablewisata" class="table table-striped">
@@ -133,19 +133,6 @@
                 </button>
                 <br><br>
 
-                {{-- @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif --}}
-
                 <div class="table100 ver2 m-b-110">
                   <table id="tablehotel" class="table table-striped">
                       <div class="table100-head">
@@ -186,19 +173,6 @@
                 Tambah Data Kuliner
               </button>
               <br><br>
-
-              {{-- @if ($errors->any())
-              <div class="alert alert-danger alert-dismissible fade show">
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                  </button>
-                  <ul>
-                      @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                      @endforeach
-                  </ul>
-              </div>
-              @endif --}}
 
               <div class="table100 ver2 m-b-110">
                 <table id="tablekuliner" class="table table-striped">
@@ -371,6 +345,7 @@
                       </div>
                     </div>
                   </div>
+
                 <!-- Modal TAMBAH DATA HOTEL -->
                 <div class="modal fade" id="adddatahotel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -412,8 +387,8 @@
                                   <option value="bangsalsari">Bangsalsari</option>
                                   <option value="tanggul">Tanggul</option>
                                 </select>
-                                <select name="wisata" id="wisata">
-                                  <option value="">Pilih</option>
+                                <select class="custom-select my-1 mr-sm-2" name="wisata" id="wisata">
+                                  <option value="">Pilih Wisata</option>
                                   @foreach ($wisata as $wisatas)
                                       <option value="{{$wisatas->id_wisata}}">{{ $wisatas->namawisata }}</option>
                                   @endforeach
@@ -490,9 +465,9 @@
                                   <option value="sumberbaru">Sumberbaru</option>
                                   <option value="bangsalsari">Bangsalsari</option>
                                   <option value="tanggul">Tanggul</option>
-                                </select>
-                                <select name="wisata" id="wisata" class="data-wisata">
-                                    <option value="">Pilih</option>
+                                </select> 
+                                <select class="custom-select my-1 mr-sm-2" name="wisata" id="wisata" class="data-wisata">
+                                    <option value="">Pilih Wisata</option>
                                     @foreach ($wisata as $wisatas)
                                         <option value="{{$wisatas->id_wisata}}">{{ $wisatas->namawisata }}</option>
                                     @endforeach
@@ -533,6 +508,7 @@
 
 
           <!-- Modal TAMBAH DATA WISATA -->
+
           <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\datawisata;
 use App\datahotel;
 use App\datakuliner;
+use File;
 use Illuminate\Support\Facades\Storage;
 
 class DashController extends Controller
@@ -42,12 +43,9 @@ class DashController extends Controller
      */
     public function store(Request $request)
     {
-        // echo $request->namawisata;
-        // dd($request);
-        // return $request;
-        // $request->validate([
-        //     'fotowisata' => 'image|mimes:jpg,png,gif,webp|max:5000'
-        // ]);
+        $request->validate([
+            'fotowisata' => 'image|mimes:jpeg,png,gif,webp|max:5000'
+        ]);
 
 
         $image = $request->file('fotowisata');
@@ -75,9 +73,9 @@ class DashController extends Controller
     public function storehotel(Request $request)
     {
 
-        // $request->validate([
-        //     'fotohotel' => 'image|mimes:jpg,png,gif,webp|max:5000'
-        // ]);
+        $request->validate([
+            'fotohotel' => 'image|mimes:jpeg,png,gif,webp|max:5000'
+        ]);
 
         $image = $request->file('fotohotel');
         $filename = time() . '-' . $image->getClientOriginalName();
@@ -97,12 +95,13 @@ class DashController extends Controller
 
         return redirect('layoutdasboard');
     }
+
     public function storekuliner(Request $request)
     {
 
-        // $request->validate([
-        //     'fotokuliner' => 'image|mimes:jpg,png,gif,webp|max:10000'
-        // ]);
+        $request->validate([
+            'fotokuliner' => 'image|mimes:jpeg,png,gif,webp|max:10000'
+        ]);
 
         $image = $request->file('fotokuliner');
         $filename = time() . '-' . $image->getClientOriginalName();
@@ -147,9 +146,9 @@ class DashController extends Controller
     public function showdataform($id, Request $request)
     {
 
-        // $request->validate([
-        //     'fotowisata' => 'image|mimes:jpg,png,gif,webp|max:5000'
-        // ]);
+        $request->validate([
+            'fotowisata' => 'image|mimes:jpeg,png,gif,webp|max:5000'
+        ]);
 
         $datawisataupdate = datawisata::where('id_wisata', $id)->first();
         $filename = $datawisataupdate->fotowisata;
@@ -183,9 +182,9 @@ class DashController extends Controller
     public function showdataformhotel($id, Request $request)
     {
 
-        // $request->validate([
-        //     'fotohotel' => 'image|mimes:jpg,png,gif,webp|max:5000'
-        // ]);
+        $request->validate([
+            'fotohotel' => 'image|mimes:jpeg,png,gif,webp|max:5000'
+        ]);
 
         $datahotelupdate = datahotel::where('id_hotel', $id)->first();
         $filename = $datahotelupdate->fotohotel;
@@ -214,9 +213,9 @@ class DashController extends Controller
     public function showdataformkuliner($id, Request $request)
     {
 
-        // $request->validate([
-        //     'fotokuliner' => 'image|mimes:jpg,png,gif,webp|max:5000'
-        // ]);
+        $request->validate([
+            'fotokuliner' => 'image|mimes:jpeg,png,gif,webp|max:5000'
+        ]);
 
         $datakulinerupdate = datakuliner::where('id_kuliner', $id)->first();
         $filename = $datakulinerupdate->fotokuliner;
@@ -281,7 +280,9 @@ class DashController extends Controller
     public function destroy($id)
     {
         $datawisatadelete = datawisata::where('id_wisata', $id)->first();
-
+        if(File::exists('wisata/'.$datawisatadelete->fotowisata)){
+            File::delete('wisata/'.$datawisatadelete->fotowisata);
+        }
         $datawisatadelete->delete();
 
         return redirect('layoutdasboard');
@@ -290,8 +291,10 @@ class DashController extends Controller
     public function destroyhotel($id)
     {
         $datahoteldelete = datahotel::where('id_hotel', $id)->first();
-
-        $datahoteldelete->delete();
+            if(File::exists('hotel/'.$datahoteldelete->fotohotel)) {
+               File::delete('hotel/'.$datahoteldelete->fotohotel);
+           }
+           $datahoteldelete->delete();
 
         return redirect('layoutdasboard');
     }
@@ -299,7 +302,9 @@ class DashController extends Controller
     public function destroykuliner($id)
     {
         $datakulinerdelete = datakuliner::where('id_kuliner', $id)->first();
-
+        if(File::exists('kuliner/'.$datakulinerdelete->fotokuliner)){
+            File::delete('kuliner/'.$datakulinerdelete->fotokuliner);
+        }
         $datakulinerdelete->delete();
 
         return redirect('layoutdasboard');
