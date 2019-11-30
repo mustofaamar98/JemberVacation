@@ -33,29 +33,54 @@ Route::get('/partpuger', 'wisataController@partpuger')->name('partpuger');
 Route::get('/parttanggul', 'wisataController@parttanggul')->name('parttanggul');
 
 
+Route::group(['middleware' => 'auth'] , function(){
+    Route::get('/layoutdasboard', 'DashController@index')->name('dashboard');
 
-Route::get('/layoutdasboard', 'DashController@index')->name('dashboard');
 
+    //route kusus menampilkan data dengan ajax//
+    route::post('/layoutdashboard/{id}', 'DashController@showdata');
+    route::post('/layoutdashboards/{id}', 'DashController@showdatahotel');
+    route::post('/layoutdashboardss/{id}', 'DashController@showdatakuliner');
+    route::post('/layoutdashboardsss/{id}', 'DashController@showdataprofil');
+    
+    //route untuk updatenya//
+    route::put('/layoutdashboard/update/{id}', 'DashController@showdataform');
+    route::put('/layoutdashboard/updatehotel/{id}', 'DashController@showdataformhotel');
+    route::put('/layoutdashboard/updatekuliner/{id}', 'DashController@showdataformkuliner');
+    route::put('/layoutdashboard/updateprofil/{id}', 'DashController@showdataformprofil');
+    
+    //route untuk delete//
+    route::get('/layoutdashboard/delete/{id}', 'DashController@destroy');
+    route::get('/layoutdashboard/deletes/{id}', 'DashController@destroyhotel');
+    route::get('/layoutdashboard/deletess/{id}', 'DashController@destroykuliner');
+    
+    Route::post('/datawisata/store', 'DashController@store')->name('adddatawisata');
+    Route::post('/datahotel/storehotel', 'DashController@storehotel')->name('adddatahotel');
+    Route::post('/datakuliner/storekuliner', 'DashController@storekuliner')->name('adddatakuliner');
+    Route::get('/layoutdasboard', 'DashController@index')->name('dashboard');
+    
+    
+    //route kusus menampilkan data dengan ajax//
+    route::post('/layoutdashboard/{id}', 'DashController@showdata');
+    route::post('/layoutdashboards/{id}', 'DashController@showdatahotel');
+    route::post('/layoutdashboardss/{id}', 'DashController@showdatakuliner');
+    
+    //route untuk updatenya//
+    route::put('/layoutdashboard/update/{id}', 'DashController@showdataform');
+    route::put('/layoutdashboard/updatehotel/{id}', 'DashController@showdataformhotel');
+    route::put('/layoutdashboard/updatekuliner/{id}', 'DashController@showdataformkuliner');
+    route::put('/layoutdashboard/updateprofil/{id}', 'DashController@updates')->name('updateprofil');
+    
+    //route untuk delete//
+    route::get('/layoutdashboard/delete/{id}', 'DashController@destroy');
+    route::get('/layoutdashboard/deletes/{id}', 'DashController@destroyhotel');
+    route::get('/layoutdashboard/deletess/{id}', 'DashController@destroykuliner');
+    
+    Route::post('/datawisata/store', 'DashController@store')->name('adddatawisata');
+    Route::post('/datahotel/storehotel', 'DashController@storehotel')->name('adddatahotel');
+    Route::post('/datakuliner/storekuliner', 'DashController@storekuliner')->name('adddatakuliner');
 
-//route kusus menampilkan data dengan ajax//
-route::post('/layoutdashboard/{id}', 'DashController@showdata');
-route::post('/layoutdashboards/{id}', 'DashController@showdatahotel');
-route::post('/layoutdashboardss/{id}', 'DashController@showdatakuliner');
-
-//route untuk updatenya//
-route::put('/layoutdashboard/update/{id}', 'DashController@showdataform');
-route::put('/layoutdashboard/updatehotel/{id}', 'DashController@showdataformhotel');
-route::put('/layoutdashboard/updatekuliner/{id}', 'DashController@showdataformkuliner');
-
-//route untuk delete//
-route::get('/layoutdashboard/delete/{id}', 'DashController@destroy');
-route::get('/layoutdashboard/deletes/{id}', 'DashController@destroyhotel');
-route::get('/layoutdashboard/deletess/{id}', 'DashController@destroykuliner');
-
-Route::post('/datawisata/store', 'DashController@store')->name('adddatawisata');
-Route::post('/datahotel/storehotel', 'DashController@storehotel')->name('adddatahotel');
-Route::post('/datakuliner/storekuliner', 'DashController@storekuliner')->name('adddatakuliner');
-
+});
 
 
 

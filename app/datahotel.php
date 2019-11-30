@@ -14,6 +14,7 @@ class datahotel extends Model
     ];
 
     public function datawisata(){
-        return $this->belongsTo('App\datawisata');
+        return $this->belongsTo('App\datawisata','id_wisata');
     }
+    
 }

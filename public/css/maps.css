@@ -50,6 +50,10 @@ svg {
     transition: fill .4s ease;
 }
 
+.row{
+    width:100%;
+}
+
 .part-maps:hover {
     fill: #595474;
 }

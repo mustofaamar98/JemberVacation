@@ -21,61 +21,61 @@ class wisataController extends Controller
 
     public function partmaps()
     {
-        $datawisatas=datawisata::where('daerah','batang')->get();
-        $datawisatasilo=datawisata::where('daerah','silo')->get();
-        $datawisatamumbulsari=datawisata::where('daerah','mumbulsari')->get();
-        $datawisatatumperejo=datawisata::where('daerah','tumperejo')->get();
+        $datawisatas=datawisata::where('daerah','22')->get();
+        $datawisatasilo=datawisata::where('daerah','7')->get();
+        $datawisatamumbulsari=datawisata::where('daerah','8')->get();
+        $datawisatatumperejo=datawisata::where('daerah','6')->get();
 
         return view('partmaps', compact('datawisatas','datawisatasilo','datawisatamumbulsari','datawisatatumperejo'));
         
     }
     public function partkalisat(){
-        $datawisatakalisat=datawisata::where('daerah','kalisat')->get();
-        $datawisatasukowono=datawisata::where('daerah','sukowono')->get();
-        $datawisatasumberjambe=datawisata::where('daerah','sumberjambe')->get();
-        $datawisataledokombo=datawisata::where('daerah','ledokombo')->get();
+        $datawisatakalisat=datawisata::where('daerah','18')->get();
+        $datawisatasukowono=datawisata::where('daerah','21')->get();
+        $datawisatasumberjambe=datawisata::where('daerah','20')->get();
+        $datawisataledokombo=datawisata::where('daerah','19')->get();
 
         return view('partkalisat', compact('datawisatakalisat','datawisatasukowono','datawisatasumberjambe','datawisataledokombo'));
     }
 
     public function partwuluhan(){
-        $datawisatabalung=datawisata::where('daerah','balung')->get();
-        $datawisatawuluhan=datawisata::where('daerah','wuluhan')->get();
-        $datawisataambulu=datawisata::where('daerah','ambulu')->get();
+        $datawisatabalung=datawisata::where('daerah','11')->get();
+        $datawisatawuluhan=datawisata::where('daerah','4')->get();
+        $datawisataambulu=datawisata::where('daerah','5')->get();
 
         return view('partwuluhan', compact('datawisatabalung','datawisatawuluhan','datawisataambulu'));
     }
 
     public function partjember(){
-        $arjasa=datawisata::where('daerah','arjasa')->get();
-        $datawisatawirolegi=datawisata::where('daerah','wirolegi')->get();
-        $datawisatajember=datawisata::where('daerah','jember')->get();
+        $arjasa=datawisata::where('daerah','17')->get();
+        $datawisatawirolegi=datawisata::where('daerah','23')->get();
+        $datawisatajember=datawisata::where('daerah','24')->get();
 
         return view('partjember', compact('arjasa','datawisatawirolegi','datawisatajember'));
     }
 
     public function partrambipuji(){
-        $datawisatapanti=datawisata::where('daerah','panti')->get();
-        $datawisatarambipuji=datawisata::where('daerah','rambipuji')->get();
-        $datawisatamangli=datawisata::where('daerah','mangli')->get();
-        $datawisatajenggawah=datawisata::where('daerah','jenggawah')->get();
+        $datawisatapanti=datawisata::where('daerah','16')->get();
+        $datawisatarambipuji=datawisata::where('daerah','20')->get();
+        $datawisatamangli=datawisata::where('daerah','25')->get();
+        $datawisatajenggawah=datawisata::where('daerah','9')->get();
 
         return view('partrambipuji', compact('datawisatapanti','datawisatarambipuji','datawisatamangli','datawisatajenggawah'));
     }
 
     public function partpuger(){
-        $datawisataumbulsari=datawisata::where('daerah','umbulsari')->get();
-        $datawisatakencong=datawisata::where('daerah','kencong')->get();
-        $datawisatapuger=datawisata::where('daerah','puger')->get();
-        $datawisatagumukmas=datawisata::where('daerah','gumukmas')->get();
+        $datawisataumbulsari=datawisata::where('daerah','12')->get();
+        $datawisatakencong=datawisata::where('daerah','1')->get();
+        $datawisatapuger=datawisata::where('daerah','3')->get();
+        $datawisatagumukmas=datawisata::where('daerah','2')->get();
 
         return view('partpuger', compact('datawisataumbulsari','datawisatakencong','datawisatapuger','datawisatagumukmas'));
     }
 
     public function parttanggul(){
-        $datawisatasumberbaru=datawisata::where('daerah','sumberbaru')->get();
-        $datawisatabangsalsari=datawisata::where('daerah','bangsalsari')->get();
-        $datawisatatanggul=datawisata::where('daerah','tanggul')->get();
+        $datawisatasumberbaru=datawisata::where('daerah','13')->get();
+        $datawisatabangsalsari=datawisata::where('daerah','15')->get();
+        $datawisatatanggul=datawisata::where('daerah','14')->get();
 
         return view('parttanggul', compact('datawisatasumberbaru','datawisatabangsalsari','datawisatatanggul'));
     }

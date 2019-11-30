@@ -150,22 +150,25 @@
                 </div>
                 <div class="row">
                      <!-- single-blog -->
+                     <?php $count = 0; ?>
                      @foreach ($hotel as $item)
-                     <div class="col-lg-4 col-md-4 col-sm-6">
-                         <div class="single-amenities">
-                             <div class="amenities-thumb">
-                                 <img class="img-hotel" src="{{asset('hotel/'.$item->fotohotel)}}" alt="">
-                             </div>
-                             <div class="amenities-details">
-                                 <div class="amenities-meta">
-                                     <span>{{ $item->updated_at->format('d M Y - H:i:s') }}</span>
-                                 </div>
-                                 <h5><a href="#"> {{ $item->namahotel }} </a></h5>
-                                 <p>{{ Illuminate\Support\Str::limit($item->deskripsihotel, $limit = 120, $end = '...') }}</p>
-                                 <span class="harga-hotel">Harga/malam : Rp.{{ number_format($item->harga,2,',','.') }}</span>
-                             </div>
-                         </div>
-                     </div>
+                        <?php if($count == 3) break; ?>
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-amenities">
+                                <div class="amenities-thumb">
+                                    <img class="img-hotel" src="{{asset('hotel/'.$item->fotohotel)}}" alt="">
+                                </div>
+                                <div class="amenities-details">
+                                    <div class="amenities-meta">
+                                        <span>{{ $item->updated_at->format('d M Y - H:i:s') }}</span>
+                                    </div>
+                                    <h5><a href="#"> {{ $item->namahotel }} </a></h5>
+                                    <p>{{ Illuminate\Support\Str::limit($item->deskripsihotel, $limit = 120, $end = '...') }}</p>
+                                    <span class="harga-hotel">Harga/malam : Rp.{{ number_format($item->harga,2,',','.') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <?php $count++; ?>
                      @endforeach
                 </div>
             </div>
@@ -207,7 +210,7 @@
                         <div class="row " style="margin-bottom:80px">
                             <!-- single-blog -->
                             @foreach ($hotel as $item)
-                            <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="col-lg-4 col-md-4 col-sm-6" style="margin-bottom:30px">
                                 <div class="single-amenities">
                                     <div class="amenities-thumb">
                                         <img class="img-hotel" src="{{asset('hotel/'.$item->fotohotel)}}" alt="">
@@ -245,7 +248,7 @@
                             <div class="box text-center">
                                 <img src="{{asset('kuliner/'.$kuliners->fotokuliner)}}" alt="">
                                 <h3> {{ $kuliners->namakuliner }} </h3>
-                                <p>{{ $kuliners->deskripsikuliner }}</p>
+                                <p>{{ Illuminate\Support\Str::limit($kuliners->deskripsikuliner, $limit = 80, $end = '...') }}</p>
                                 <span>Harga: {{ number_format($kuliners->hargakuliner,2,',','.') }}</span>
                             </div>
                         </div>
@@ -304,16 +307,6 @@
 								<div class="info"></div>
 							</form>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div>
-						<p class="footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 					</div>
 				</div>
 			</div>
