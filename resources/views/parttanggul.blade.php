@@ -33,6 +33,13 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="sumberbaru" role="tabpanel" aria-labelledby="sumberbaru-tab">
             <h2 class="judul-lokasi text-right">SUMBERBARU-JEMBER</h2>
+            @if($datawisatasumberbaru->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
             @foreach ($datawisatasumberbaru as $itemsumberbaru)
             <div class="row animated zoomIn delay-0.5s">
                         <div class="col text-right">
@@ -45,10 +52,18 @@
                         </div>
                     </div>
             @endforeach
+            @endif
         </div>
 
         <div class="tab-pane fade" id="bangsalsari" role="tabpanel" aria-labelledby="bangsalsari-tab">
                 <h2 class="judul-lokasi text-right">BANGSALSARI-JEMBER</h2>
+                @if($datawisatabangsalsari->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
                 @foreach ($datawisatabangsalsari as $itembangsalsari)
                 <div class="row animated zoomIn delay-0.5s">
                             <div class="col text-right">
@@ -61,10 +76,18 @@
                             </div>
                         </div>
                 @endforeach
+                @endif
         </div>
 
         <div class="tab-pane fade" id="tanggul" role="tabpanel" aria-labelledby="tanggul-tab">
                 <h2 class="judul-lokasi text-right">TANGGUL-JEMBER</h2>
+                @if($datawisatatanggul->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
                 @foreach ($datawisatatanggul as $itemtanggul)
                 <div class="row animated zoomIn delay-0.5s">
                             <div class="col text-right">
@@ -77,6 +100,7 @@
                             </div>
                         </div>
                 @endforeach
+                @endif
         </div>
     </div> 
 </div>

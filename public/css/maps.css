@@ -50,8 +50,8 @@ svg {
     transition: fill .4s ease;
 }
 
-.row{
-    width:100%;
+.row {
+    width: 100%;
 }
 
 .part-maps:hover {
@@ -153,7 +153,70 @@ ul .btn-info2 a {
     color: white !important;
 }
 
+ul .btn-info3 a {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 3px solid #FFAFBD;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: #FFAFBD !important;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+ul .btn-info3 a:hover {
+    background-image: linear-gradient(45deg, #FFAFBD, #FFC3A0);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: white !important;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+ul .btn-info4 a {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 3px solid rgb(9, 8, 97);
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: rgb(17, 3, 97) !important;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+ul .btn-info4 a:hover {
+    background: rgb(17, 3, 97);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: white !important;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
 ul .distrik a {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 3px solid #FFAFBD;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    line-height: 2;
+    color: #FFAFBD;
+    animation-duration: 1s;
+    animation-delay: 0s;
+}
+
+ul .distrik a:hover {
     background-image: linear-gradient(45deg, #FFAFBD, #FFC3A0);
     padding: 10px 20px;
     border-radius: 50px;

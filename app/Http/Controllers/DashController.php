@@ -69,6 +69,8 @@ class DashController extends Controller
             'deskripsijudul2' => $request->deskripsijudul2,
             'urlmap' => $request->urlmap,
             'urlvidio' => $request->urlvidio,
+            'lat' => $request->lat,
+            'lng' => $request->lng
         ]);
 
         return redirect('layoutdasboard');
@@ -94,7 +96,9 @@ class DashController extends Controller
             'deskripsihotel' => $request->deskripsihotel,
             'fotohotel' => $filename,
             'harga' => $request->harga,
-            'id_wisata' => $request->wisata
+            'id_wisata' => $request->wisata,
+            'lat' => $request->lat,
+            'lng' => $request->lng
 
         ]);
 
@@ -183,7 +187,9 @@ class DashController extends Controller
             'deskripsijudul2' => $request->deskripsijudul2,
             'urlmap' => $request->urlmap,
             'urlvidio' => $request->urlvidio,
-            'fotowisata' => $filename
+            'fotowisata' => $filename,
+            'lat' => $request->lat,
+            'lng' => $request->lng
         ]);
 
         return redirect('layoutdasboard');
@@ -216,7 +222,9 @@ class DashController extends Controller
             'deskripsihotel' => $request->deskripsihotel,
             'fotohotel' => $filename,
             'harga' => $request->harga,
-            'id_wisata' => $request->wisata
+            'id_wisata' => $request->wisata,
+            'lat' => $request->lat,
+            'lng' => $request->lng
         ]);
 
         return redirect('layoutdasboard');

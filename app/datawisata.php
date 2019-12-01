@@ -10,7 +10,7 @@ class datawisata extends Model
     protected $primaryKey = 'id_wisata';
 	public $timestamps = true;
 	protected $fillable = [
-        'namawisata','judultagline', 'deskripsitagline', 'judul1', 'deskripsijudul1', 'judul2', 'deskripsijudul2','fotowisata', 'urlvidio', 'urlmap', 'daerah'
+        'namawisata','judultagline', 'deskripsitagline', 'judul1', 'deskripsijudul1', 'judul2', 'deskripsijudul2','fotowisata', 'urlvidio', 'urlmap', 'daerah','lat','lng'
     ];
     
     public function datahotels(){

@@ -452,10 +452,21 @@ aria-hidden="true">
                 required></textarea>
             </div>
             <div class="form-group">
+              <label for="">Latitude</label>
+              <input type="text" class="form-control" id="latitude" aria-describedby="" placeholder="Latitude"
+                name="lat" required>
+            </div>
+            <div class="form-group">
+              <label for="">Longitude</label>
+              <input type="text" class="form-control" id="longitude" aria-describedby="" placeholder="Longitudes"
+                name="lng" required>
+            </div>
+            <div class="form-group">
               <label for="exampleFormControlFile1">File Foto</label>
               <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fotohotel" value=""
                 required>
             </div>
+            
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
@@ -536,6 +547,16 @@ aria-hidden="true">
               <label for="">deskripsi hotel</label>
               <textarea class="form-control data-deskripsihotel" id="exampleFormControlTextarea1" rows="3"
                 name="deskripsihotel" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="">Latitude</label>
+              <input type="text" class="form-control data-lat" id="latitude" aria-describedby="" placeholder="Latitude"
+                name="lat" required>
+            </div>
+            <div class="form-group">
+              <label for="">Longitude</label>
+              <input type="text" class="form-control data-lng" id="longitude" aria-describedby="" placeholder="Longitudes"
+                name="lng" required>
             </div>
             <div class="form-group">
               <label for="exampleFormControlFile1">File Foto</label>
@@ -639,6 +660,16 @@ aria-hidden="true">
                 name="urlmap" required>
             </div>
             <div class="form-group">
+              <label for="">Latitude</label>
+              <input type="text" class="form-control" id="latitude" aria-describedby="" placeholder="Latitude"
+                name="lat" required>
+            </div>
+            <div class="form-group">
+              <label for="">Longitude</label>
+              <input type="text" class="form-control" id="longitude" aria-describedby="" placeholder="Longitudes"
+                name="lng" required>
+            </div>
+            <div class="form-group">
               <label for="exampleFormControlFile1">File Foto</label>
               <input type="file" class="form-control-file" id="exampleFormControlFile1" name="fotowisata">
             </div>
@@ -734,6 +765,16 @@ aria-hidden="true">
               <label for="">URL Map</label>
               <input type="text" class="form-control data-urlmap" id="namawisata" aria-describedby=""
                 placeholder="url map" name="urlmap" required>
+            </div>
+            <div class="form-group">
+              <label for="">Latitude</label>
+              <input type="text" class="form-control data-lat" id="lat" aria-describedby="" placeholder="Latitude"
+                name="lat" required>
+            </div>
+            <div class="form-group">
+              <label for="">Longitude</label>
+              <input type="text" class="form-control data-lng" id="lng" aria-describedby="" placeholder="Longitudes"
+                name="lng" required>
             </div>
             <div class="form-group">
               <label for="exampleFormControlFile1">File Foto</label>
@@ -833,6 +874,8 @@ aria-hidden="true">
           $('.data-urlmap').val(data.urlmap);
           $('.data-urlvidio').val(data.urlvidio);
           $('.data-fotowisata').val(data.fotowisata);
+          $('.data-lat').val(data.lat);
+          $('.data-lng').val(data.lng);
 
         }
       }).done(function (data) {
@@ -879,6 +922,8 @@ aria-hidden="true">
           $('.data-harga').val(data.harga);
           $('.data-deskripsihotel').val(data.deskripsihotel);
           $('.data-wisata').val(data.id_wisata);
+          $('.data-lat').val(data.lat);
+          $('.data-lng').val(data.lngs);
 
 
         }

@@ -83,7 +83,7 @@ a:hover {
     top: 50%;
     width: 400px;
     position: absolute;
-    left: 64%;
+    left: 60%;
     transform: translate(-50%, -50%);
 }
 
@@ -104,4 +104,9 @@ a:hover {
 .part-mayang ul .tumperejo {
     margin-top: 100px;
     margin-left: 100px;
+}
+
+.vidio {
+    position: absolute;
+    top: 20%;
 }

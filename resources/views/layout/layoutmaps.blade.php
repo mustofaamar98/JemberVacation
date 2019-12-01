@@ -35,7 +35,7 @@
 
         <div class="right">
             <div class="box-konten">
-                @yield('konten')
+                    @yield('konten')
             </div>
         </div>
     </div>

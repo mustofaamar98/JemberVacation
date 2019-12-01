@@ -13,12 +13,15 @@
 
 Route::redirect('/home', '/');
 Route::get('/', 'wisataController@index')->name('maps');
+Route::get('/layout/rekomendasi', 'RekomendasiController@index')->name('cekrekomendasi');
 
 Route::get('/partmaps', 'wisataController@partmaps')->name('partmaps');
 
 Route::get('/infowisata', 'wisataController@show')->name('infowisata');
 
 Route::get('/infowisata/{id}', 'wisataController@showData');
+
+// Route::get('/layoutmaps', 'wisataController@layoutmaps')->name('layoutmaps');
 
 Route::get('/partkalisat', 'wisataController@partkalisat')->name('partkalisat');
 
@@ -31,6 +34,12 @@ Route::get('/partrambipuji', 'wisataController@partrambipuji')->name('partrambip
 Route::get('/partpuger', 'wisataController@partpuger')->name('partpuger');
 
 Route::get('/parttanggul', 'wisataController@parttanggul')->name('parttanggul');
+
+Route::get('/tampilkan/{distrik}' , 'wisataController@distrik')->name('distrik');
+
+Route::get('/tampilkan2/{daerah}' , 'wisataController@daerah')->name('daerah');
+
+Route::get('/rekomendasi/{rekomendasi}' , 'wisataController@rekomendasi')->name('rekomendasi');
 
 
 Route::group(['middleware' => 'auth'] , function(){

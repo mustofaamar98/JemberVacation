@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\datahotel;
 use App\datakuliner;
 use App\datawisata;
+use App\datadaerah;
+use App\datadistrict;
 use Illuminate\Http\Request;
 
 class wisataController extends Controller
@@ -18,6 +20,12 @@ class wisataController extends Controller
     {
         return view('maps');
     }
+
+    // public function layoutmaps(){
+    //     $cekwisata=datawisata::all();
+
+    //     return view('layoutmaps', compact('cekwisata'));
+    // }
 
     public function partmaps()
     {
@@ -80,6 +88,70 @@ class wisataController extends Controller
         return view('parttanggul', compact('datawisatasumberbaru','datawisatabangsalsari','datawisatatanggul'));
     }
 
+    public function distrik($distrik)
+    {
+        $data = datadaerah::where('id_district' , $distrik)->get();
+        return response()->json($data);
+    }
+
+    public function daerah($daerah)
+    {
+        $data = datawisata::where('daerah' , $daerah)->get();
+        return response()->json($data);
+    }
+
+    public function hitungJarak($lokasi1_lat, $lokasi1_long, $lokasi2_lat, $lokasi2_long, $unit = 'km', $desimal = 2) {
+        // Menghitung jarak dalam derajat
+        $derajat = 6371*acos((cos(deg2rad($lokasi2_lat))*cos(deg2rad($lokasi1_lat))*cos(deg2rad($lokasi1_long)- deg2rad($lokasi2_long))) + (sin(deg2rad($lokasi2_lat)) * sin(deg2rad($lokasi1_lat))));
+         
+        // Mengkonversi derajat kedalam unit yang dipilih (kilometer, mil atau mil laut)
+        switch($unit) {
+         case 'km':
+          $jarak = $derajat * 1; // 1 derajat = 111.13384 km, berdasarkan diameter rata-rata bumi (12,735 km)
+          break;
+         case 'mi':
+          $jarak = $derajat * 69.05482; // 1 derajat = 69.05482 miles(mil), berdasarkan diameter rata-rata bumi (7,913.1 miles)
+          break;
+         case 'nmi':
+          $jarak =  $derajat * 59.97662; // 1 derajat = 59.97662 nautic miles(mil laut), berdasarkan diameter rata-rata bumi (6,876.3 nautical miles)
+        }
+        return round($jarak, $desimal);
+    }
+
+    public function rekomendasi($rekomendasi)
+    {
+        $wisata = explode(",",$rekomendasi);
+        $rekomendasi = array();
+        $hotel = array();
+        foreach ($wisata as $data) {
+            $x = datawisata::where('id_wisata',$data)->get();
+            $y = datahotel::where('id_wisata',$data)->get();
+            array_push($rekomendasi , $x);
+            array_push($hotel , $y);
+        }
+        $jarak = array();
+        $x=0;
+            for ($i=0; $i < count($hotel); $i++) { 
+                $hotel[$i][0]['lat']=0;
+                for($y = 0; $y < count($rekomendasi); $y++) {
+                    $x = $this->hitungJarak($rekomendasi[$y][0]['lat'],$rekomendasi[$y][0]['lng'],$hotel[$i][0]['lat'],$hotel[$i][0]['lng'])/count($rekomendasi);
+                    $hotel[$i][0]['lat'] += $x ;
+                }    
+            }
+
+             for ($z=0; $z < count($hotel)-1 ; $z++) { 
+                          
+                if( $hotel[$z][0]['lat']>$hotel[$z+1][0]['lat']) //swap zf the current value zs greater the next value. change > to > for descendzng order
+                {
+                        $temp=$hotel[$z][0];
+                        $hotel[$z][0]=$hotel[$z+1][0];
+                        $hotel[$z+1][0]=$temp;
+                        $swapped=true;
+                }
+             }
+        return response()->json($hotel);
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -99,8 +171,7 @@ class wisataController extends Controller
      */
     public function store(Request $request)
     {
-
-    }
+            }
 
     /**
      * Display the specified resource.

@@ -38,6 +38,13 @@
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="umbulsari" role="tabpanel" aria-labelledby="umbulsari-tab">
             <h2 class="judul-lokasi text-right">UMBULSARI-JEMBER</h2>
+            @if($datawisataumbulsari->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
             @foreach ( $datawisataumbulsari as $itemumbulsari)
             <div class="row animated zoomIn delay-0.5s">
                         <div class="col text-right">
@@ -50,10 +57,18 @@
                         </div>
                     </div>
             @endforeach
+            @endif
         </div>
 
         <div class="tab-pane fade" id="kencong" role="tabpanel" aria-labelledby="kencong-tab">
                 <h2 class="judul-lokasi text-right">KENCONG-JEMBER</h2>
+                @if($datawisatakencong->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
                 @foreach ($datawisatakencong as $itemkencong)
                 <div class="row animated zoomIn delay-0.5s">
                             <div class="col text-right">
@@ -66,10 +81,18 @@
                             </div>
                         </div>
                 @endforeach
+                @endif
         </div>
 
         <div class="tab-pane fade" id="puger" role="tabpanel" aria-labelledby="puger-tab">
                 <h2 class="judul-lokasi text-right">PUGER-JEMBER</h2>
+                @if($datawisatapuger->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
                 @foreach ($datawisatapuger as $itempuger)
                 <div class="row animated zoomIn delay-0.5s">
                             <div class="col text-right">
@@ -82,10 +105,18 @@
                             </div>
                         </div>
                 @endforeach
+                @endif
         </div>
 
         <div class="tab-pane fade" id="gumukmas" role="tabpanel" aria-labelledby="gumukmas-tab">
                 <h2 class="judul-lokasi text-right">GUMUKMAS-JEMBER</h2>
+                @if($datawisatagumukmas->count() == 0)
+                <div class="vidio">
+                    <video style="width: 850px;" autoplay loop muted>
+                                <source src="{{asset('/vidio/preview.mp4')}}" type="video/mp4">
+                            </video>
+                </div>
+                @else 
                 @foreach ($datawisatagumukmas as $itemgumukmas)
                 <div class="row animated zoomIn delay-0.5s">
                             <div class="col text-right">
@@ -98,6 +129,7 @@
                             </div>
                         </div>
                 @endforeach
+                @endif
         </div>
     </div> 
 </div>
